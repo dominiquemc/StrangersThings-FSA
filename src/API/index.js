@@ -8,26 +8,17 @@ const BASE_URL = `https://strangers-things.herokuapp.com/api/${COHORT_NAME}/`;
 export const getPosts = async () => {
   try {
     const post = {
+      method: "GET",
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${TOKEN_STRING_HERE}`,
+        // Authorization: `Bearer ${TOKEN_STRING_HERE}`,
       },
     };
     const response = await fetch(`${BASE_URL}posts`);
     const result = await response.json();
     console.log(result);
-    return result;
+    return result.data.posts;
   } catch (err) {
     console.log(err);
   }
 };
-
-//   try {
-//     const response = await fetch(`${BASE_URL}posts`);
-//     const result = await response.json();
-//     console.log(result);
-//     return result;
-//   } catch (err) {
-//     console.log(err);
-//   }
-// };

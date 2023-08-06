@@ -7,11 +7,9 @@ export default function UserPosts() {
   useEffect(() => {
     async function retrievePosts() {
       const response = await getPosts();
-      const test2 = setPosts(response);
-      console.log("This is a test", test2);
+      setPosts(response);
     }
-    const test = retrievePosts();
-    console.log("Hello", test);
+    retrievePosts();
   }, []);
 
   return (
@@ -19,7 +17,14 @@ export default function UserPosts() {
       {posts.map((post) => {
         return (
           <div key={post._id}>
+            <h2>{post.title}</h2>
             <p>{post.description}</p>
+            <ul>
+              <li>{post.price}</li>
+              <li>{post.author.username}</li>
+              <li>{post.location}</li>
+              <li>{post.willDeliver}</li>
+            </ul>
           </div>
         );
       })}

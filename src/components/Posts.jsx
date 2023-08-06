@@ -20,10 +20,9 @@ export default function UserPosts() {
             <h2>{post.title}</h2>
             <p>{post.description}</p>
             <ul>
-              <li>{post.price}</li>
-              <li>{post.author.username}</li>
-              <li>{post.location}</li>
-              <li>{post.willDeliver}</li>
+              <li>Price: {post.price}</li>
+              <li>Seller: {post.author.username}</li>
+              <li>Location: {post.location}</li>
             </ul>
           </div>
         );

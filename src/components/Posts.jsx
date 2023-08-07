@@ -17,9 +17,9 @@ export default function UserPosts() {
       {posts.map((post) => {
         return (
           <div key={post._id}>
-            <h2>{post.title}</h2>
-            <p>{post.description}</p>
-            <ul>
+            <ul className="posts">
+              <h2>{post.title}</h2>
+              <p>{post.description}</p>
               <li>Price: {post.price}</li>
               <li>Seller: {post.author.username}</li>
               <li>Location: {post.location}</li>

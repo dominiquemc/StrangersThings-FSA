@@ -13,22 +13,46 @@
 
 /* Register */
 
-.registerForm form,
-.loginForm form {
+.registerForm,
+.loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 30px;
 }
 
-.registerForm form label,
-.loginForm form label {
-  margin-bottom: 3px;
+.registerForm input {
+  padding: 10px 10px;
+  width: 300px;
+  background-color: rgb(28, 27, 55);
+  border-radius: 5px;
+  border: none;
+}
+
+.registerForm label,
+.loginForm label {
   margin-top: 3px;
-  padding: 5px;
+  padding: 10px;
+  text-align: start;
 }
 
-.registerForm form button,
-.loginForm form button {
-  margin-top: 10px;
+.registerForm button,
+.loginForm button {
+  margin-top: 20px;
+  padding: 15px 50px;
+  background-color: rgb(19, 26, 53);
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.registerForm button:hover,
+.loginForm button:hover {
+  background-color: rgb(63, 91, 130);
+}
+
+.registerForm p {
+  font-weight: 500;
 }

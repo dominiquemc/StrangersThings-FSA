@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,7 +12,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-}
+  border: 6px solid red;
+} */
 
 /* Dominique */
 
@@ -20,29 +21,18 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
+}
+
+body, html {
+  height: 100%;
 }
 
 body {
-  font-family: 'REM', sans-serif;
-  background-color: #E8F1F5;
-  color: #1a1a1a;
-  height: 100vh;
-  width: 100%;
-}
-
-.allPosts {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-
-
-}
-
-.allPosts ul {
-  margin-top: 30px;
-  background-color: rgb(245, 246, 252);
-  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  /* background-color: #9BCDD2; */
+  background-image: linear-gradient(to bottom, #799bc4, #7aa9ca, #80b5cd, #8cc2d0, #9bcdd2);
+  color: #172a4b;
 }
 
 
@@ -52,27 +42,29 @@ ul {
 
 a {
   text-decoration: none;
-  color: #080808;
+  color: #172a4b;
 }
 
 nav {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  background-color: #5492a5;
+  background-color: #FAF0E4;
   padding: 1.5rem;
   width: 100%;
   align-items: center;
 }
 
 nav h1 {
-  font-size: 2.3rem;
-  text-transform: uppercase;
+  font-size: 2.8rem;
+  
+  font-family: "Lobster", cursive;
 }
 
 nav ul {
   display: flex;
   gap: 30px;
+  
 }
 
 nav li {
@@ -81,7 +73,5 @@ nav li {
   font-weight: 500;
   letter-spacing: 1px;
 }
-
-
 
 /* End /*

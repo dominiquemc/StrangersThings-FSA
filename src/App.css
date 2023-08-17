@@ -1,4 +1,5 @@
 #root {
+  height: 100%;
   text-align: center;
 }
 
@@ -9,22 +10,74 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  height: 70%;
+  width: 100%;
+}
+.home h1 {
+  font-size: 3rem;
 }
 
-/* Register */
+.home p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.shoppinglogo {
+  height: 450px;
+  margin-right: 15px;
+  transform: rotate(10deg);
+}
+
+/* Posts */
+
+.allPosts {
+  display: grid;
+  justify-content: center;
+}
+
+.allPosts ul {
+  margin-top: 30px;
+  background-color: rgb(245, 246, 252);
+  padding: 10px;
+  border-radius: 10px;
+  padding: 50px;
+}
+
+.allPosts h1 {
+  font-size: 3rem;
+  margin-top: 25px;
+}
+/* Register / Login */
 
 .registerForm,
 .loginForm {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   padding: 30px;
+  height: 40%;
 }
 
-.registerForm input {
+.registerForm {
+  height: 50%;
+}
+.loginForm {
+  height: 40%;
+}
+
+.registerForm h1,
+.loginForm h1 {
+  margin-bottom: 10px;
+}
+
+.registerForm input,
+.loginForm input {
   padding: 10px 10px;
   width: 300px;
-  background-color: rgb(28, 27, 55);
+  background-color: #faf0e4;
+
   border-radius: 5px;
   border: none;
 }
@@ -40,12 +93,13 @@
 .loginForm button {
   margin-top: 20px;
   padding: 15px 50px;
-  background-color: rgb(19, 26, 53);
+  background-color: #ff8551;
   border: none;
   border-radius: 10px;
   text-transform: uppercase;
   font-weight: 700;
   cursor: pointer;
+  font-size: 1.1rem;
 }
 
 .registerForm button:hover,
@@ -53,6 +107,11 @@
   background-color: rgb(63, 91, 130);
 }
 
-.registerForm p {
+.registerForm p,
+.loginForm p {
   font-weight: 500;
+}
+
+.login-register {
+  margin-top: 10px;
 }

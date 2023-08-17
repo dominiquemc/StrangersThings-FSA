@@ -1,17 +1,44 @@
+import { loginUser } from "../API";
+import { useForm } from "react-hook-form";
+
 export default function Login() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => loginUser(data.username, data.password);
+
   return (
-    <div className="loginForm">
+    <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
       <h1>Login</h1>
-      <form>
-        <label>Username:</label>
-        <input type="text" />
+      <label>Username: </label>
+      <input
+        {...register("username", {
+          required: true,
+        })}
+        type="text"
+        id="username"
+        placeholder="Username"
+      />
+      {errors.username?.type === "required" && <p>Username is required</p>}
 
-        <label>Password: </label>
-        <input type="password" />
+      {/* Password Field */}
+      <label>Password: </label>
+      <input
+        {...register("password", {
+          required: true,
+        })}
+        type="password"
+        id="password"
+        placeholder="********"
+      />
+      {errors.password?.type === "required" && <p>Password is required</p>}
 
-        <button>Log In</button>
-        <a href="/account/register">Don't have an account? Sign Up</a>
-      </form>
-    </div>
+      <button>Login</button>
+      <a className="login-register" href="/account/register">
+        Don't have an account? Register
+      </a>
+    </form>
   );
 }

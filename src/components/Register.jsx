@@ -1,5 +1,6 @@
 import { registerUser } from "../API";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 export default function Register() {
   const {
@@ -9,10 +10,33 @@ export default function Register() {
     watch,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => registerUser(data.username, data.password);
+
+  // Navigate to post if login is successful
+  const navigate = useNavigate();
+
+  // function onSubmit(data)  {
+  //   const response = await registerUser(data.username, data.password);
+
+  const onSubmit = async (data) => {
+    if (data.password !== data.confirmpassword) {
+      return;
+    }
+
+    const response = await registerUser(data.username, data.password);
+
+    if (response.success) {
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("password", data.password);
+
+      navigate("/posts");
+    } else {
+      alert("try again");
+    }
+  };
 
   return (
     <form className="registerForm" onSubmit={handleSubmit(onSubmit)}>
+      <h1>Register</h1>
       <label>Username: </label>
       <input
         {...register("username", {
@@ -20,6 +44,7 @@ export default function Register() {
           minLength: 8,
           maxLength: 15,
         })}
+        name="username"
         type="text"
         id="username"
         placeholder="Username"
@@ -37,14 +62,12 @@ export default function Register() {
           minLength: 9,
           maxLength: 15,
         })}
+        name="password"
         type="password"
         id="password"
         placeholder="********"
-        aria-invalid={errors.password ? "true" : "false"}
       />
-      {errors.password?.type === "required" && (
-        <p role="alert">Password is required</p>
-      )}
+      {errors.password?.type === "required" && <p>Password is required</p>}
       {errors.password?.type <= "minLength" && (
         <p>Password must be at least 9 characters</p>
       )}
@@ -52,16 +75,18 @@ export default function Register() {
       <label>Confirm Password: </label>
       <input
         {...register("confirmpassword", { required: true })}
-        id="passwordr"
         type="password"
+        id="passwordr"
         placeholder="********"
-        aria-invalid={errors.confirmpassword ? "true" : "false"}
       />
       {watch("confirmpassword") !== watch("password") &&
       getValues("confirmpassword") ? (
         <p>Password must match</p>
       ) : null}
       <button>Register</button>
+      <a className="login-register" href="/account/login">
+        Already have an account? Log In
+      </a>
     </form>
   );
 }

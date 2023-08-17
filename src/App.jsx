@@ -4,8 +4,12 @@ import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import { Link, Routes, Route } from "react-router-dom";
+import { registerUser } from "./API";
+import { useEffect } from "react";
 
 function App() {
+  // const [username, setUsername] = useState("")
+
   return (
     <>
       <nav>
@@ -20,6 +24,18 @@ function App() {
           <li>
             <Link to="/account/login">Login</Link>
           </li>
+
+          {registerUser && (
+            <li>
+              <Link to="/account/login">Profile</Link>
+            </li>
+          )}
+
+          {registerUser && (
+            <li>
+              <Link to="/account/login">Logout</Link>
+            </li>
+          )}
         </ul>
       </nav>
       <Routes>
@@ -32,3 +48,6 @@ function App() {
   );
 }
 export default App;
+
+// changing nav upon login
+// success/error messsages

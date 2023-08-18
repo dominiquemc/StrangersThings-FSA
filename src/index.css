@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -12,58 +12,66 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  border: 6px solid red;
+} */
+
+/* Dominique */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+body, html {
+  height: 100%;
 }
 
 body {
-  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  /* background-color: #9BCDD2; */
+  background-image: linear-gradient(to bottom, #799bc4, #7aa9ca, #80b5cd, #8cc2d0, #9bcdd2);
+  color: #172a4b;
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #172a4b;
+}
+
+nav {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
+  list-style-type: none;
+  background-color: #FAF0E4;
+  padding: 1.5rem;
+  width: 100%;
+  align-items: center;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+nav h1 {
+  font-size: 2.8rem;
+  
+  font-family: "Lobster", cursive;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+nav ul {
+  display: flex;
+  gap: 30px;
+  
+}
+
+nav li {
+  font-size: 1.2rem;
+  text-transform: uppercase;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  letter-spacing: 1px;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+/* End /*

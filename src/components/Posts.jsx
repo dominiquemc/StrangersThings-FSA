@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { getPosts } from "../API";
 import { ToastContainer, toast } from "react-toastify";
-import Register from "./Register";
 import { registerUser } from "../API";
+import { Link } from "react-router-dom";
 
 export default function UserPosts() {
   const [posts, setPosts] = useState([]);
@@ -23,6 +23,11 @@ export default function UserPosts() {
   return (
     <div className="allPosts">
       <h1>Posts</h1>
+      {registerUser && (
+            <li>
+              <Link to="/makepost">NewPost</Link>
+            </li>
+          )}
       {/* searchbar space */}
       {posts.map((post) => {
         return (

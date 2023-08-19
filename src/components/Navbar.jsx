@@ -15,7 +15,6 @@ export default function Nav() {
           <li>
             <Link to="/posts">Posts</Link>
           </li>
-
           {isLoggedIn ? (
             <>
               <li>

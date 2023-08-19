@@ -30,7 +30,7 @@ export default function Login() {
   };
   return (
     <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
-      <h1>Login</h1>
+      <h1>Sign In</h1>
       <label>Username: </label>
       <input
         {...register("username", {

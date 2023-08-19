@@ -2,7 +2,7 @@ import { registerUser } from "../API";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "./Auth";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
@@ -31,19 +31,6 @@ export default function Register() {
       localStorage.setItem("password", data.password);
 
       handleAuthChange(true);
-
-      const customId = "custom-id-yes";
-      // toast.success("🦄 Wow so easy!", {
-      //   position: "top-center",
-      //   autoClose: 5000,
-      //   hideProgressBar: false,
-      //   closeOnClick: true,
-      //   pauseOnHover: true,
-      //   draggable: true,
-      //   progress: undefined,
-      //   theme: "light",
-      //   toastId: customId,
-      // });
 
       navigate("/posts");
     } else {
@@ -101,7 +88,6 @@ export default function Register() {
         <p>Password must match</p>
       ) : null}
       <button onClick={notify}>Register</button>
-      {/* <ToastContainer /> */}
       <a className="login-register" href="/account/login">
         Already have an account? Log In
       </a>

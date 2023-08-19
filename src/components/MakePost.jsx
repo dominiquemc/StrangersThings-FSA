@@ -11,11 +11,13 @@ const MakePost = () => {
         event.preventDefault();
 
         try {
+            const token = localStorage.getItem('token')
+            console.log('token')
             const response = await fetch(`https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/posts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    Authorizaiton: `Bearer ${tokenhere}`,
+                    'Authorizaiton': `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     post: {

@@ -12,7 +12,7 @@ import { ToastContainer } from "react-toastify";
 function App() {
   return (
     <AuthProvider>
-      <Nav />;
+      <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/posts" element={<UserPosts />} />

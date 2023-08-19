@@ -1,14 +1,32 @@
+import { useNavigate } from "react-router-dom";
 import { loginUser } from "../API";
 import { useForm } from "react-hook-form";
+import { useAuth } from "./Auth";
 
 export default function Login() {
+  const { handleAuthChange } = useAuth();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => loginUser(data.username, data.password);
 
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    const response = await loginUser(data.username, data.password);
+
+    if (response.success) {
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("password", data.password);
+
+      handleAuthChange(true);
+      navigate("/posts");
+    } else {
+      alert("Login failed");
+      handleAuthChange(false);
+    }
+  };
   return (
     <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
       <h1>Login</h1>

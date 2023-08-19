@@ -1,77 +1,63 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
-  border: 6px solid red;
-} */
-
-/* Dominique */
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  
-}
-
-body, html {
-  height: 100%;
-}
-
-body {
-  font-family: 'Raleway', sans-serif;
-  /* background-color: #9BCDD2; */
-  background-image: linear-gradient(to bottom, #799bc4, #7aa9ca, #80b5cd, #8cc2d0, #9bcdd2);
+ }
+ 
+ body {
+  font-family: "Raleway", sans-serif;
+  background-image: linear-gradient(
+   to bottom,
+   #799bc4,
+   #7aa9ca,
+   #80b5cd,
+   #8cc2d0,
+   #9bcdd2
+  );
   color: #172a4b;
-}
-
-
-ul {
+ }
+ 
+ ul {
   list-style-type: none;
-}
-
-a {
+ }
+ 
+ nav a {
   text-decoration: none;
   color: #172a4b;
-}
-
-nav {
+  font-weight: 700;
+ }
+ 
+ nav a:hover {
+  background-color: #e6e77f;
+  transition: 0.3s ease-in-out;
+  padding: 5px;
+  filter: drop-shadow(5px 5px 5px #cfd167);
+  border-radius: 10px;
+ }
+ 
+ nav {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
-  background-color: #FAF0E4;
+  background-color: #faf0e4;
   padding: 1.5rem;
   width: 100%;
   align-items: center;
-}
-
-nav h1 {
+ }
+ 
+ nav h1 {
   font-size: 2.8rem;
-  
+ 
   font-family: "Lobster", cursive;
-}
-
-nav ul {
+ }
+ 
+ nav ul {
   display: flex;
   gap: 30px;
-  
-}
-
-nav li {
+ }
+ 
+ nav li {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 500;
   letter-spacing: 1px;
-}
-
-/* End /*

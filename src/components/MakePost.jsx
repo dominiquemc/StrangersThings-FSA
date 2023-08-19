@@ -4,8 +4,9 @@ const MakePost = () => {
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
+    const [seller, setSeller] = useState('');
     const [location, setLocation] = useState('');
-    const [willDeliver, setWillDeliver] = useState(true);
+    const [willDeliver, setWillDeliver] = useState(false);
 
     const handleSubmit = async(event) => {
         event.preventDefault();
@@ -24,6 +25,7 @@ const MakePost = () => {
                         title,
                         description,
                         price,
+                        seller,
                         location,
                         willDeliver,
                     }
@@ -36,9 +38,13 @@ const MakePost = () => {
         }
     }
 
+    // Check if user is logged in
+    const isLoggedIn = !! localStorage.getItem('token');
+
     return (
-        <div>
+        <div className='makePost'>
             <h2>Add New Post</h2>
+            {isLoggedIn ? (
             <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input
@@ -57,6 +63,12 @@ const MakePost = () => {
                 value={price}
                 onChange={(e)=> setPrice(e.target.value)} />
 
+                <label>Seller:</label>
+                <input
+                type='text'
+                value={seller}
+                onChange={(e)=> setSeller(e.target.value)} />
+
                 <label>Location:</label>
                 <input
                 type='text'
@@ -71,33 +83,11 @@ const MakePost = () => {
 
                 <button type='submit'>Submit Form</button>
             </form>
+            ) : ( 
+                <p>Please log in to make a post.</p>
+                )}
         </div>
     )
 }
 
 export default MakePost;
-
-// const makePost = async () => {
-//     try {
-//         const response = await fetch (`https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/posts`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json',
-//                 'Authorization': `Bearer ${Token}`
-//             },
-//             body: JSON.stringify({
-//                 post: {
-//                     title: 'My favorite stuffed animal',
-//                     description: 'This is a teddy bear from 1980 that has been well cared for.',
-//                     price: '$30.00',
-//                     willDeliver: true
-//                 }
-//             })
-//         });
-//         const result = await response.json();
-//         console.log(result);
-//         return result
-//     } catch (err) {
-//         console.error(err);
-//     }
-// }

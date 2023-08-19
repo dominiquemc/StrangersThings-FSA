@@ -25,7 +25,7 @@ export default function UserPosts() {
       <h1>Posts</h1>
       {registerUser && (
             <li>
-              <Link to="/makepost">NewPost</Link>
+              <Link to="/makepost">Would you like to post your item? Click here!</Link>
             </li>
           )}
       {/* searchbar space */}

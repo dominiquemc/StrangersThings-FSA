@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../API";
 import { useForm } from "react-hook-form";
 import { useAuth } from "./Auth";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const { handleAuthChange } = useAuth();
@@ -19,11 +20,11 @@ export default function Login() {
     if (response.success) {
       localStorage.setItem("username", data.username);
       localStorage.setItem("password", data.password);
-
+      toast.success("Welcome back!");
       handleAuthChange(true);
       navigate("/posts");
     } else {
-      alert("Login failed");
+      toast.error("Please try again");
       handleAuthChange(false);
     }
   };

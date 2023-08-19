@@ -1,8 +1,10 @@
 import { registerUser } from "../API";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./Auth";
 
 export default function Register() {
+  const { handleAuthChange } = useAuth();
   const {
     register,
     handleSubmit,
@@ -28,6 +30,7 @@ export default function Register() {
       localStorage.setItem("username", data.username);
       localStorage.setItem("password", data.password);
 
+      handleAuthChange(true);
       navigate("/posts");
     } else {
       alert("try again");

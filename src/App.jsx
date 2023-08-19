@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Logout from "./components/Logout";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/Auth";
+import { ToastContainer } from "react-toastify";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/account/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
       </Routes>
+      <ToastContainer />
     </AuthProvider>
   );
 }

@@ -8,6 +8,7 @@ import MakePost from "./components/MakePost";
 import { AuthProvider } from "./components/Auth";
 import Nav from "./components/Nav";
 import Logout from "./components/Logout";
+import { BrowserRouter } from "react-router-dom";
 // import { useEffect } from "react";
 
 function App() {
@@ -15,7 +16,7 @@ function App() {
 // >>>>>>> post-reg-dc
 
   return (
-    <AuthProvider>
+<AuthProvider>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />

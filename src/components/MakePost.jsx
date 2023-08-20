@@ -7,7 +7,7 @@ const MakePost = () => {
     const [seller, setSeller] = useState('');
     const [location, setLocation] = useState('');
     const [willDeliver, setWillDeliver] = useState(false);
-
+    
     const handleSubmit = async(event) => {
         event.preventDefault();
 
@@ -38,14 +38,13 @@ const MakePost = () => {
         }
     }
 
-    // Check if user is logged in
     const isLoggedIn = !! localStorage.getItem('token');
 
     return (
         <div className='makePost'>
             <h2>Add New Post</h2>
             {isLoggedIn ? (
-            <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input
                 type='text'
@@ -82,7 +81,7 @@ const MakePost = () => {
                 onChange={(e)=> setWillDeliver(e.target.value)} />
 
                 <button type='submit'>Submit Form</button>
-            </form>
+            </form>           
             ) : ( 
                 <p>Please log in to make a post.</p>
                 )}

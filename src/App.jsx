@@ -3,12 +3,13 @@ import UserPosts from "./components/Posts";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MakePost from "./components/MakePost";
+import UpdatePost from "./components/UpdatePost";
 import { AuthProvider } from "./components/Auth";
 import Nav from "./components/Nav";
 import Logout from "./components/Logout";
-import { BrowserRouter } from "react-router-dom";
+
 // import { useEffect } from "react";
 
 function App() {
@@ -32,4 +33,4 @@ function App() {
 export default App;
 
 // changing nav upon login
-// success/error messsages
+// success/error messages

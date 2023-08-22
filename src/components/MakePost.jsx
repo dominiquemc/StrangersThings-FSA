@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useAuth } from "./Auth";
+// import jwt_decode from 'jsonwebtoken';
 
 const MakePost = () => {
     const [title, setTitle] = useState('');
@@ -12,13 +14,13 @@ const MakePost = () => {
         event.preventDefault();
 
         try {
-            const token = localStorage.getItem('token')
+            const token = localStorage.getItem('token');
             console.log(token)
             const response = await fetch(`https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/posts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
+                    Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     post: {
@@ -38,7 +40,9 @@ const MakePost = () => {
         }
     }
 
-    const isLoggedIn = !! localStorage.getItem('token');
+
+const {isLoggedIn } = useAuth();
+// const isLoggedIn = !! localStorage.getItem('token');
 
     return (
         <div className='makePost'>
@@ -78,7 +82,7 @@ const MakePost = () => {
                 <input
                 type='checkbox'
                 checked={willDeliver}
-                onChange={(e)=> setWillDeliver(e.target.value)} />
+                onChange={(e)=> setWillDeliver(e.target.checked)} />
 
                 <button type='submit'>Submit Form</button>
             </form>           

@@ -18,10 +18,10 @@ export default function Login() {
     const response = await loginUser(data.username, data.password);
 
     if (response.success) {
-      localStorage.setItem("username", data.username);
-      localStorage.setItem("password", data.password);
+      localStorage.setItem("token", response.data.token);
       toast.success("Welcome back!");
-      handleAuthChange(true);
+
+      handleAuthChange(true, response.data.user);
       navigate("/posts");
     } else {
       toast.error("Please try again");

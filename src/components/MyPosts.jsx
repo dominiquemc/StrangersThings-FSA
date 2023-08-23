@@ -33,8 +33,8 @@ const MyPosts = () => {
     }, [isLoggedIn, navigate, user]);   
 
 return (
-        <div className='myPosts'>
-            <h2>My Posts</h2>
+        <div>
+            <h2 className="myPosts">My Posts</h2>
             {isLoggedIn ? (
                 <div>
                     {posts.length === 0 ? (

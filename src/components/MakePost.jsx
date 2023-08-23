@@ -48,10 +48,10 @@ const MakePost = () => {
 const {isLoggedIn } = useAuth();
 
     return (
-        <div className='makePost'>
-            <h2>Add New Post</h2>
+        <div className='makePost-container'>
+            <h2 className="makePost">Add A New Post</h2>
             {isLoggedIn ? (
-                    <form onSubmit={handleSubmit}>
+                    <form className="postsInputs" onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input
                 type='text'
@@ -87,7 +87,7 @@ const {isLoggedIn } = useAuth();
                 checked={willDeliver}
                 onChange={(e)=> setWillDeliver(e.target.checked)} />
 
-                <button type='submit'>Submit Form</button>
+                <button className="submitPost" type='submit'>Submit Form</button>
             </form>           
             ) : ( 
                 <p>Please log in to make a post.</p>

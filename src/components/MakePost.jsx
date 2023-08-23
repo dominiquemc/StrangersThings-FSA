@@ -10,7 +10,7 @@ const MakePost = () => {
     const [seller, setSeller] = useState('');
     const [location, setLocation] = useState('');
     const [willDeliver, setWillDeliver] = useState(false);
-    
+
     const handleSubmit = async(event) => {
         event.preventDefault();
 

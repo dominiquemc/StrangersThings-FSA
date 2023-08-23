@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 const MyPosts = () => {
     const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
-    const { isLoggedIn } = useAuth();
+    const { isLoggedIn, user } = useAuth();
 
     useEffect(() => {
         if (!isLoggedIn) {
@@ -15,27 +15,29 @@ const MyPosts = () => {
         const fetchPosts = async () => {
             try {
                 const token = localStorage.getItem('token');
-                const response = await fetch(`https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/profile`, {
+                const response = await fetch('https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/posts', {
                     method: 'GET',
                     headers: {
                         Authorization: `Bearer ${token}`,
                     },
                 });
                 const result = await response.json();
-                setPosts(result.data.posts);
+                // Filter posts to include only those authored by the active user
+                const userPosts = result.data.posts.filter(post => post.author._id === user._id);
+                setPosts(userPosts);
             } catch (error) {
                 console.error(error);
             }
         };
         fetchPosts();
-    }, [isLoggedIn, navigate]);
+    }, [isLoggedIn, navigate, user]);   
 
-    return (
+return (
         <div className='myPosts'>
             <h2>My Posts</h2>
             {isLoggedIn ? (
                 <div>
-                    {posts.length === 1 ? (
+                    {posts.length === 0 ? (
                         <p>Welcome to your Posts!</p>
                     ) : (
                         <ul>
@@ -60,5 +62,3 @@ const MyPosts = () => {
 };
 
 export default MyPosts;
-
-

@@ -1,24 +1,27 @@
 import { useState } from "react";
+import { useAuth } from "./Auth";
+import { useNavigate } from 'react-router-dom';
 
 const MakePost = () => {
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
     const [seller, setSeller] = useState('');
     const [location, setLocation] = useState('');
     const [willDeliver, setWillDeliver] = useState(false);
-
+    
     const handleSubmit = async(event) => {
         event.preventDefault();
 
         try {
-            const token = localStorage.getItem('token')
+            const token = localStorage.getItem('token');
             console.log(token)
             const response = await fetch(`https://strangers-things.herokuapp.com/api/2302-acc-ct-web-pt-a/posts`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${token}`,
+                    Authorization: `Bearer ${token}`,
                 },
                 body: JSON.stringify({
                     post: {
@@ -33,19 +36,22 @@ const MakePost = () => {
             });
             const result = await response.json();
             console.log(result);
+
+            navigate('/posts');
+
         } catch (error) {
             console.error(error);
         }
     }
 
-    // Check if user is logged in
-    const isLoggedIn = !! localStorage.getItem('token');
+
+const {isLoggedIn } = useAuth();
 
     return (
         <div className='makePost'>
             <h2>Add New Post</h2>
             {isLoggedIn ? (
-            <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit}>
                 <label>Title:</label>
                 <input
                 type='text'
@@ -79,10 +85,10 @@ const MakePost = () => {
                 <input
                 type='checkbox'
                 checked={willDeliver}
-                onChange={(e)=> setWillDeliver(e.target.value)} />
+                onChange={(e)=> setWillDeliver(e.target.checked)} />
 
                 <button type='submit'>Submit Form</button>
-            </form>
+            </form>           
             ) : ( 
                 <p>Please log in to make a post.</p>
                 )}

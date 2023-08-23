@@ -3,19 +3,21 @@ import UserPosts from "./components/Posts";
 import Home from "./components/Home";
 import Register from "./components/Register";
 import Login from "./components/Login";
-import { Link, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import MakePost from "./components/MakePost";
+import UpdatePost from "./components/UpdatePost";
 import { AuthProvider } from "./components/Auth";
 import Nav from "./components/Nav";
 import Logout from "./components/Logout";
+import { useState } from "react";
+
 // import { useEffect } from "react";
 
 function App() {
-  // const [username, setUsername] = useState("")
-// >>>>>>> post-reg-dc
+// const [posts, setPosts] = useState([]);
 
   return (
-    <AuthProvider>
+<AuthProvider>
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -31,4 +33,4 @@ function App() {
 export default App;
 
 // changing nav upon login
-// success/error messsages
+// success/error messages

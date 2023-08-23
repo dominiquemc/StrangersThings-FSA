@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useAuth } from "./Auth";
-// import jwt_decode from 'jsonwebtoken';
+import { useNavigate } from 'react-router-dom';
 
 const MakePost = () => {
+    const navigate = useNavigate();
     const [title, setTitle] = useState('');
     const [description, setDescription] = useState('');
     const [price, setPrice] = useState('');
@@ -35,6 +36,9 @@ const MakePost = () => {
             });
             const result = await response.json();
             console.log(result);
+
+            navigate('/posts');
+
         } catch (error) {
             console.error(error);
         }
@@ -42,7 +46,6 @@ const MakePost = () => {
 
 
 const {isLoggedIn } = useAuth();
-// const isLoggedIn = !! localStorage.getItem('token');
 
     return (
         <div className='makePost'>

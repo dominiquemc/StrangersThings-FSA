@@ -5,7 +5,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import { Routes, Route } from "react-router-dom";
 import MakePost from "./components/MakePost";
-import UpdatePost from "./components/UpdatePost";
+import MyPosts from "./components/MyPosts";
 import { AuthProvider } from "./components/Auth";
 import Nav from "./components/Nav";
 import Logout from "./components/Logout";
@@ -26,6 +26,7 @@ function App() {
         <Route path="/account/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/makepost" element={<MakePost />} />
+        <Route path="/profile" element={<MyPosts />}></Route>
       </Routes>
     </AuthProvider>
   );

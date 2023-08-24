@@ -30,7 +30,7 @@ export default function Register() {
       localStorage.setItem("username", data.username);
       localStorage.setItem("password", data.password);
 
-      handleAuthChange(true);
+      handleAuthChange(true, response.data.user);
 
       navigate("/posts");
     } else {

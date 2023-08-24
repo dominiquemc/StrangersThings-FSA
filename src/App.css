@@ -212,3 +212,16 @@
     height: 100%;
   }
 }
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  border: none;
+  background-color: rgb(250, 118, 81);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}

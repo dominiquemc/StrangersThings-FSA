@@ -11,7 +11,6 @@ export const getPosts = async () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        // Authorization: `Bearer ${TOKEN_STRING_HERE}`,
       },
     };
     const response = await fetch(`${BASE_URL}posts`);
@@ -52,7 +51,7 @@ export const registerUser = async (username, password) => {
 
 export const loginUser = async (username, password) => {
   try {
-    const response = await fetch(`${BASE_URL}/users/login`, {
+    const response = await fetch(`${BASE_URL}users/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

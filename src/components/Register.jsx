@@ -1,8 +1,12 @@
 import { registerUser } from "../API";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "./Auth";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Register() {
+  const { handleAuthChange } = useAuth();
   const {
     register,
     handleSubmit,
@@ -12,10 +16,8 @@ export default function Register() {
   } = useForm();
 
   // Navigate to post if login is successful
+  const notify = () => toast("Thanks for registering!");
   const navigate = useNavigate();
-
-  // function onSubmit(data)  {
-  //   const response = await registerUser(data.username, data.password);
 
   const onSubmit = async (data) => {
     if (data.password !== data.confirmpassword) {
@@ -28,9 +30,11 @@ export default function Register() {
       localStorage.setItem("username", data.username);
       localStorage.setItem("password", data.password);
 
+      handleAuthChange(true, response.data.user);
+
       navigate("/posts");
     } else {
-      alert("try again");
+      toast.error("Please try again");
     }
   };
 
@@ -83,7 +87,7 @@ export default function Register() {
       getValues("confirmpassword") ? (
         <p>Password must match</p>
       ) : null}
-      <button>Register</button>
+      <button onClick={notify}>Register</button>
       <a className="login-register" href="/account/login">
         Already have an account? Log In
       </a>

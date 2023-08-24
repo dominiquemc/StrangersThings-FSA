@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../API";
 import { useForm } from "react-hook-form";
 import { useAuth } from "./Auth";
+import { toast } from "react-toastify";
 
 export default function Login() {
   const { handleAuthChange } = useAuth();
@@ -10,6 +11,24 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+
+
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    const response = await loginUser(data.username, data.password);
+
+    if (response.success) {
+      localStorage.setItem("token", response.data.token);
+      toast.success("Welcome back!");
+
+      handleAuthChange(true, response.data.user);
+      navigate("/posts");
+    } else {
+      toast.error("Please try again");
+      handleAuthChange(false);
+    }
+  };
 
   const navigate = useNavigate();
 
@@ -29,7 +48,7 @@ export default function Login() {
   };
   return (
     <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
-      <h1>Login</h1>
+      <h1>Sign In</h1>
       <label>Username: </label>
       <input
         {...register("username", {

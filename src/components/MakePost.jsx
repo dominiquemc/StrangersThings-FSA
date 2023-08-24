@@ -87,7 +87,7 @@ const {isLoggedIn } = useAuth();
                 checked={willDeliver}
                 onChange={(e)=> setWillDeliver(e.target.checked)} />
 
-                <button className="submitPost" type='submit'>Submit Form</button>
+                <button className="submitPost button" type='submit'>Submit Form</button>
             </form>           
             ) : ( 
                 <p>Please log in to make a post.</p>

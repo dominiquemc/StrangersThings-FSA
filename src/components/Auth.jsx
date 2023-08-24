@@ -9,10 +9,10 @@ export function AuthProvider({ children }) {
   const handleAuthChange = (loggedIn, userData = null) => {
     setIsLoggedIn(loggedIn);
     if (userData) {
+      console.log("AUTH USER DATA BEFORE SETTING", userData);
       setUser(userData);
     }
   };
-
   // Log the user data before calling handleAuthChange
   console.log("User data before setting:", user);
 

@@ -6,7 +6,7 @@ import Register from "./components/Register";
 import Login from "./components/Login";
 import UserProfile from "./components/Profile";
 import Logout from "./components/Logout";
-import MakePost from "./components/MakeAPost";
+import MakePost from "./components/MakePost";
 import { Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./components/Auth";
 import { ToastContainer } from "react-toastify";

@@ -5,7 +5,7 @@ import DeleteUserPost from "./DeletePost";
 import { useAuth } from "./Auth";
 import { registerUser } from "../API";
 import { Link } from "react-router-dom";
-import Searchbar from "./SearchForm";
+import Searchbar from "./Search";
 
 export default function UserPosts() {
   const { user } = useAuth();

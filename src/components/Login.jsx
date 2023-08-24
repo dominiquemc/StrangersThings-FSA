@@ -12,6 +12,7 @@ export default function Login() {
     formState: { errors },
   } = useForm();
 
+
   const navigate = useNavigate();
 
   const onSubmit = async (data) => {
@@ -29,6 +30,22 @@ export default function Login() {
     }
   };
 
+  const navigate = useNavigate();
+
+  const onSubmit = async (data) => {
+    const response = await loginUser(data.username, data.password);
+
+    if (response.success) {
+      localStorage.setItem("username", data.username);
+      localStorage.setItem("password", data.password);
+
+      handleAuthChange(true);
+      navigate("/posts");
+    } else {
+      alert("Login failed");
+      handleAuthChange(false);
+    }
+  };
   return (
     <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
       <h1>Sign In</h1>
@@ -62,3 +79,10 @@ export default function Login() {
     </form>
   );
 }
+
+
+
+
+
+
+

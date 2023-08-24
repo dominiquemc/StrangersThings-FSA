@@ -80,7 +80,7 @@ export default function Register() {
       <input
         {...register("confirmpassword", { required: true })}
         type="password"
-        id="passwordr"
+        id="password"
         placeholder="********"
       />
       {watch("confirmpassword") !== watch("password") &&

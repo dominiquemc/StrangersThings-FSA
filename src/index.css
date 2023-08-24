@@ -26,16 +26,40 @@ nav a {
   color: #172a4b;
   font-weight: 700;
 }
-
-nav a:hover {
+ 
+ body {
+  font-family: "Raleway", sans-serif;
+  background-image: linear-gradient(
+   to bottom,
+   #799bc4,
+   #7aa9ca,
+   #80b5cd,
+   #8cc2d0,
+   #9bcdd2
+  );
+  color: #172a4b;
+ }
+ 
+ ul {
+  list-style-type: none;
+ }
+ 
+ nav a {
+  text-decoration: none;
+  color: #172a4b;
+  font-weight: 700;
+ }
+ 
+ nav a:hover {
   background-color: #e6e77f;
   transition: 0.3s ease-in-out;
   padding: 5px;
   filter: drop-shadow(5px 5px 5px #cfd167);
   border-radius: 10px;
+
 }
 
-nav {
+ nav {
   display: flex;
   justify-content: space-around;
   list-style-type: none;
@@ -43,20 +67,26 @@ nav {
   padding: 1.5rem;
   width: 100%;
   align-items: center;
-}
-
-nav h1 {
+ }
+ 
+ nav h1 {
   font-size: 2.8rem;
-
   font-family: "Lobster", cursive;
-}
-
-nav ul {
+ }
+ 
+ nav ul {
   display: flex;
   gap: 30px;
 }
 
 nav li {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+ nav li {
   font-size: 1.2rem;
   text-transform: uppercase;
   font-weight: 500;

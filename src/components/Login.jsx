@@ -28,6 +28,7 @@ export default function Login() {
       handleAuthChange(false);
     }
   };
+
   return (
     <form className="loginForm" onSubmit={handleSubmit(onSubmit)}>
       <h1>Sign In</h1>

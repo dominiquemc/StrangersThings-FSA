@@ -59,7 +59,7 @@
 
 .registerForm,
 .loginForm,
-.postsInputs{
+.postsInputs {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,7 +143,7 @@
   margin-top: 10px;
 }
 
-/* MAKE A POST FORM  */ 
+/* MAKE A POST FORM  */
 
 .makePost-container {
   display: grid;
@@ -153,7 +153,6 @@
 
 .makePost {
   font-size: 2.3rem;
-  margin-top: 25px;
   text-transform: uppercase;
   padding: 2px;
   filter: drop-shadow(1px 2px 1px rgb(0, 0, 0));
@@ -171,6 +170,50 @@
   cursor: pointer;
   font-size: 1.1rem;
 }
+
+/* SEARCHBAR  */
+
+.searchbar {
+  margin-top: 10px;
+}
+
+.searchbar input {
+  width: 40%;
+}
+
+.searchbar,
+.searchbar input {
+  padding: 10px;
+}
+
+.searchbar button {
+  padding: 10px;
+  margin-left: 10px;
+  background-color: rgb(250, 118, 81);
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.searchbar input,
+.searchbar button {
+  border-radius: 5px;
+  border: none;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  border: none;
+  background-color: rgb(250, 118, 81);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 414px) {
@@ -209,19 +252,6 @@
   }
 }
 
-/* DELETE BUTTON */
-
-.delete-btn {
-  border: none;
-  background-color: rgb(250, 118, 81);
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-}
-
 @media (max-width: 250px) {
   .home {
     max-height: 90vh;
@@ -258,5 +288,3 @@
     height: 100%;
   }
 }
-
-

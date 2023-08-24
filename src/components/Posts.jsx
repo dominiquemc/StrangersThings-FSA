@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { getPosts } from "../API";
-import MakePost from "./MakeAPost";
+import MakePost from "./MakePost";
 import DeleteUserPost from "./DeletePost";
 import { useAuth } from "./Auth";
 import { ToastContainer, toast } from "react-toastify";

@@ -46,12 +46,7 @@
   padding: 50px;
 }
 
-
 .allPosts h1 {
-}
-
-.allPosts h1, .myPosts {
-
   font-size: 2.3rem;
   margin-top: 25px;
   text-transform: uppercase;
@@ -74,12 +69,8 @@
 }
 
 .registerForm,
-
-.loginForm {
-
 .loginForm,
 .postsInputs {
-
   min-height: 50vh;
 }
 
@@ -107,7 +98,7 @@
 
 .registerForm label,
 .loginForm label,
-.postsInputs {
+.postsInputs label {
   margin-top: 3px;
   padding: 10px;
   text-align: start;
@@ -138,7 +129,7 @@
 }
 
 .registerForm button:hover,
-.loginForm button:hover
+.loginForm button:hover,
 .submitPost button:hover {
   background-color: rgb(63, 91, 130);
 }
@@ -151,6 +142,78 @@
 .login-register {
   margin-top: 10px;
 }
+
+/* MAKE A POST FORM  */
+
+.makePost-container {
+  display: grid;
+  justify-content: center;
+  padding: 50px;
+}
+
+.makePost {
+  font-size: 2.3rem;
+  text-transform: uppercase;
+  padding: 2px;
+  filter: drop-shadow(1px 2px 1px rgb(0, 0, 0));
+  background-color: #faf0e4;
+}
+
+.submitPost {
+  margin-top: 20px;
+  padding: 15px 50px;
+  background-color: #ff8551;
+  border: none;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+/* SEARCHBAR  */
+
+.searchbar {
+  margin-top: 10px;
+}
+
+.searchbar input {
+  width: 40%;
+}
+
+.searchbar,
+.searchbar input {
+  padding: 10px;
+}
+
+.searchbar button {
+  padding: 10px;
+  margin-left: 10px;
+  background-color: rgb(250, 118, 81);
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.searchbar input,
+.searchbar button {
+  border-radius: 5px;
+  border: none;
+}
+
+/* DELETE BUTTON */
+
+.delete-btn {
+  border: none;
+  background-color: rgb(250, 118, 81);
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 /* MEDIA QUERIES */
 
 @media (max-width: 414px) {
@@ -225,62 +288,3 @@
     height: 100%;
   }
 }
-
-
-/* DELETE BUTTON */
-
-.delete-btn {
-  border: none;
-  background-color: rgb(250, 118, 81);
-  padding: 10px;
-  margin-top: 10px;
-
-/* Make A Post Form */
-
-.makePost-container {
-  display: grid;
-  justify-content: center;
-  padding: 50px;
-  
-}
-
-.submitPost {
-  margin-top: 20px;
-  padding: 15px 50px;
-  background-color: #ff8551;
-  border: none;
-  border-radius: 10px;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-
-}
-
-  font-size: 1.1rem;
-}
-
-.makePost-container {}
-.makePost {
-  font-size: 2.3rem;
-  margin-top: 25px;
-  text-transform: uppercase;
-  padding: 2px;
-  filter: drop-shadow(1px 2px 1px rgb(0, 0, 0));
-  background-color: #faf0e4;
-}
-
-/* .postsInputs {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 30px;
-  height: 40%;
-  min-height: 50vh;
-  padding: 10px 10px;
-  width: 300px;
-  height: 100px;
-  border-radius: 5px;
-  border: none;
-} */
-
